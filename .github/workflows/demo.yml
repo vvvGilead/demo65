@@ -28,7 +28,8 @@ jobs:
       - name: dist
         uses: action/upload-artifact@v4
           with:
-            path: distro
+            name: package
+            path: dist
             archive: false
   deploy:
     needs: build
