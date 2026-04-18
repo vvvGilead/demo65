@@ -27,9 +27,9 @@ jobs:
         run: npm run build
       - name: dist
         uses: actions/upload-artifact@v7
-          with:
+        with:
             name: package
-            path: dist   #source
+            path: package.json   #source
             archive: false
   deploy:
     needs: build
