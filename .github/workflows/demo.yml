@@ -26,10 +26,10 @@ jobs:
       - name: Build website
         run: npm run build
       - name: dist
-        uses: action/upload-artifact@v4
+        uses: actions/upload-artifact@v4
           with:
             name: package
-            path: dist
+            path: dist   #source
             archive: false
   deploy:
     needs: build
