@@ -27,8 +27,9 @@ jobs:
         run: npm run build
       - name: dist
         uses: action/upload-artifact@v4
-        path: distro
-        archive: false
+          with:
+            path: distro
+            archive: false
   deploy:
     needs: build
     runs-on: ubuntu-latest
