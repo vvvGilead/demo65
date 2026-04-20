@@ -18,6 +18,8 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    outputs:
+      my_name: ${{steps.name_value.outputs.my_name}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -30,10 +32,15 @@ jobs:
         with:
             name: package
             path: dist   #source
+      - name: Get a value
+        id: name_value
+        run: echo 'my_name=Vincent' >> $GITHUB_OUTPUT
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Output build value
+        run: echo 'my name: ${{needs.build.outputs.my_name}}'
       - name: Get Build Artifacts
         uses: actions/download-artifact@v8
         with:
