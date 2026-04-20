@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output build value
-        run: echo "Name is: ${{needs.build.outputs.my_name}}"
+        run: echo 'Name is: ${{needs.build.outputs.my_name}}'
       - name: Get Build Artifacts
         uses: actions/download-artifact@v8
         with:
