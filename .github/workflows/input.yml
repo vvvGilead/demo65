@@ -5,7 +5,7 @@ on:
         description: "Repo Name"
         required: true
 jobs:
-    print name:
+    print_name:
       runs-on: ubuntu-latest
       steps:
         - name: Display repo name
