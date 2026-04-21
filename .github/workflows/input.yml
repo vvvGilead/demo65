@@ -4,10 +4,10 @@ on:
       repo_name:
         description: "Repo Name"
         required: true
-    jobs:
-      print name:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Display repo name
-            run: |
-              echo 'The value you entered was ${{inputs.repo_name}}'
+jobs:
+    print name:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Display repo name
+          run: |
+            echo 'The value you entered was ${{inputs.repo_name}}'
