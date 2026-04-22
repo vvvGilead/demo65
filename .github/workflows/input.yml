@@ -1,9 +1,12 @@
+name: Output WF
 on:
   workflow_dispatch:
     inputs:
       repo_name:
         description: "Repo Name"
         required: true
+env:
+  VHU: 'Vincent H'
 jobs:
     print_name:
       runs-on: ubuntu-latest
