@@ -5,8 +5,6 @@ on:
       repo_name:
         description: "Repo Name"
         required: true
-env:
-  VHU: 'Vincent H'
 jobs:
     print_name:
       runs-on: ubuntu-latest
@@ -15,11 +13,12 @@ jobs:
       steps:
         - name: Display
           run: |
-            echo 'The value you entered was ${{inputs.repo_name}}'\
+            echo 'The repo name you entered was ${{inputs.repo_name}}'\
             echo 'Creating Repo...'
         - name: Create Repo
           run: |
             gh repo create ${{inputs.repo_name}} \
               --template "vvvGilead/freeplaneAI" \
+              --recurse-submodules \
               --private \
               --clone
